@@ -163,3 +163,65 @@ w.show_money()
 
 
 
+
+
+
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+
+
+class LibraryBook(Book):
+    def __init__(self, title, author):
+        super().__init__(title, author)   
+        self.__available = True           
+
+    def borrow_book(self):
+        if self.__available:
+            print("Book Borrowed Successfully")
+            self.__available = False
+        else:
+            print("Book is Not Available")
+
+b1 = LibraryBook("Python Programming", "Guido van Rossum")
+b1.borrow_book()
+b1.borrow_book()
+
+
+
+
+
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+
+
+class LibraryBook(Book):
+    def __init__(self, title, author):
+        super().__init__(title, author)
+        self.__available = True
+
+    def display_details(self):
+        print("Title:", self.title)
+        print("Author:", self.author)
+
+    def borrow_book(self):
+        if self.__available:
+            print("Book Borrowed Successfully")
+            self.__available = False
+        else:
+            print("Book is Not Available")
+
+
+b1 = LibraryBook("Central", "ABC")
+
+b1.display_details()
+
+
+b1.borrow_book()
+
+b1.borrow_book()
+
+
